@@ -39,8 +39,7 @@ export function DesignEngineering() {
               {items.map((item) => (
                 <li
                   key={item}
-                  className="group flex cursor-default items-center justify-between px-2 py-4 font-display text-lg transition-colors duration-200 ease-out hover:bg-paper/5 hover:pl-4 hover:text-signal"
-                  style={{ transitionProperty: "color, background-color, padding" }}
+                  className="group flex cursor-default items-center justify-between px-2 py-4 font-display text-lg transition-[color,background-color,padding] duration-200 ease-out hover:bg-paper/5 hover:pl-4 hover:text-signal"
                 >
                   {item}
                   <span

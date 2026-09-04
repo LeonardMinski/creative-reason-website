@@ -43,8 +43,7 @@ export function SiteFooter() {
 
       <p
         aria-hidden="true"
-        className="select-none overflow-hidden whitespace-nowrap px-4 pb-2 text-left font-display font-black leading-none text-paper/[0.06]"
-        style={{ fontSize: "clamp(4rem, 16vw, 12rem)" }}
+        className="select-none overflow-hidden whitespace-nowrap px-4 pb-2 text-left font-display font-black leading-none text-paper/[0.06] text-[clamp(4rem,16vw,12rem)]"
       >
         {siteConfig.name}™
       </p>

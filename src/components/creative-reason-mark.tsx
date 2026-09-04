@@ -62,8 +62,7 @@ export function CreativeReasonMark({
           aria-hidden="true"
           fill
           sizes={sizes}
-          className="animate-mark-enter object-contain"
-          style={{ animationDelay: "160ms" }}
+          className="animate-mark-enter object-contain [animation-delay:160ms]"
           priority
         />
       </span>
