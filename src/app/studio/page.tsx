@@ -23,14 +23,25 @@ const focusAreas = [
   "Systems Thinking",
 ];
 
+/** The founder's own brief, verbatim — see /studio. */
+const bio = [
+  "Leonard Minski is a multidisciplinary designer, engineer and product thinker working at the point where UX, technology and culture meet.",
+  "His background is rooted in frontend engineering, where years spent translating complex requirements into clear, accessible digital experiences developed into something broader: an obsession with how products should work, how they should feel and why they should exist in the first place.",
+  "That perspective now spans the full product journey — from discovery, UX strategy and interaction design through to design systems, production engineering and launch. Leonard is as comfortable interrogating a broken user journey as he is shaping an interface in Figma, architecting it in React or refining the final interaction in code.",
+  "Music has always run alongside technology, giving his work a different creative rhythm. Sampling, production, visual culture and experimentation inform the way he approaches software: observe what exists, strip away the noise, find the underlying structure, then rebuild it with intention.",
+  "That thinking led to Creative Reason — an independent practice built around the belief that good ideas need both imagination and discipline. It is also what led to products such as CRATE, created from a real frustration with the fragmented workflow of organising and preparing samples.",
+  "Leonard’s strength is not fitting neatly into a single discipline. It is moving between them. UX gives him the questions. Design gives those answers form. Engineering makes them real.",
+  "He works with organisations, products and ideas that need more than decoration — problems that need to be understood, systems that need to be simplified and experiences that deserve to be built properly.",
+];
+
 export default function StudioPage() {
   return (
     <Section tone="ink" className="min-h-[70vh]" aria-labelledby="studio-heading">
       <SectionMeta index="00" label="About the Founder" tone="paper" />
       <SpectrumRule className="mt-6 mb-10" />
 
-      <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-center">
-        <Reveal className="relative aspect-4/5 w-full overflow-hidden">
+      <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-start">
+        <Reveal className="relative aspect-4/5 w-full overflow-hidden lg:sticky lg:top-24">
           <Image
             src="/studio/Leonard-minski.jpg"
             alt={siteConfig.founder}
@@ -61,12 +72,13 @@ export default function StudioPage() {
             </h1>
           </Reveal>
           <Reveal delayMs={80}>
-            <p className="mt-8 max-w-xl font-body text-base leading-relaxed text-paper/70 md:text-lg">
-              {siteConfig.name} is the independent practice of {siteConfig.founder} —
-              combining UX, design, engineering, music and systems thinking to
-              understand problems, shape better ideas and build useful
-              things. Based in {siteConfig.location}.
-            </p>
+            <div className="mt-8 flex max-w-xl flex-col gap-5">
+              {bio.map((paragraph) => (
+                <p key={paragraph} className="font-body text-base leading-relaxed text-paper/70 md:text-lg">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
             <ul className="mt-8 flex flex-wrap gap-2">
               {focusAreas.map((area) => (
                 <Pill as="li" tone="dark" key={area}>
