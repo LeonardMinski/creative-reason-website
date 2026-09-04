@@ -19,7 +19,7 @@ test.describe("mobile navigation", () => {
 
     const overlay = page.getByRole("dialog", { name: "Site navigation" });
     await expect(overlay).toBeVisible();
-    for (const label of ["Work", "Products", "Consultancy", "Studio", "Contact"]) {
+    for (const label of ["Work", "Products", "Consultancy", "About the Founder", "Contact"]) {
       await expect(overlay.getByRole("link", { name: label })).toBeVisible();
     }
   });
@@ -52,7 +52,10 @@ test.describe("mobile navigation", () => {
   test("selecting a link closes the menu and navigates", async ({ page }) => {
     await page.goto("/");
     await page.getByRole("button", { name: "Open menu" }).click();
-    await page.getByRole("dialog", { name: "Site navigation" }).getByRole("link", { name: "Studio" }).click();
+    await page
+      .getByRole("dialog", { name: "Site navigation" })
+      .getByRole("link", { name: "About the Founder" })
+      .click();
 
     await expect(page).toHaveURL(/\/studio$/);
     await expect(page.getByRole("dialog", { name: "Site navigation" })).toBeHidden();

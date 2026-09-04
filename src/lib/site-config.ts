@@ -26,6 +26,6 @@ export const primaryNav: NavItem[] = [
   { label: "Work", href: "/work" },
   { label: "Products", href: "/products" },
   { label: "Consultancy", href: "/consultancy" },
-  { label: "Studio", href: "/studio" },
+  { label: "About the Founder", href: "/studio" },
   { label: "Contact", href: "/contact" },
 ];

@@ -10,16 +10,23 @@ import { TypewriterWord } from "@/components/typewriter-word";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Studio",
+  title: "About the Founder",
   description: `${siteConfig.name} is the practice of ${siteConfig.founder} — an independent UX, design and technology studio based in ${siteConfig.location}.`,
 };
 
-const focusAreas = ["Design", "Engineering", "Music", "Culture", "Systems Thinking"];
+const focusAreas = [
+  "Design",
+  "Engineering",
+  "App Development",
+  "Product Strategy",
+  "Music",
+  "Systems Thinking",
+];
 
 export default function StudioPage() {
   return (
     <Section tone="ink" className="min-h-[70vh]" aria-labelledby="studio-heading">
-      <SectionMeta index="00" label="Studio & Founder" tone="paper" />
+      <SectionMeta index="00" label="About the Founder" tone="paper" />
       <SpectrumRule className="mt-6 mb-10" />
 
       <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-center">

@@ -18,7 +18,10 @@ test.describe("primary navigation", () => {
       "href",
       "/consultancy"
     );
-    await expect(nav.getByRole("link", { name: "Studio" })).toHaveAttribute("href", "/studio");
+    await expect(nav.getByRole("link", { name: "About the Founder" })).toHaveAttribute(
+      "href",
+      "/studio"
+    );
     await expect(nav.getByRole("link", { name: "Contact" })).toHaveAttribute("href", "/contact");
 
     await nav.getByRole("link", { name: "Work" }).click();
