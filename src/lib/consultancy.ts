@@ -55,6 +55,107 @@ export const consultancyMethod: ConsultancyStage[] = [
   { index: "06", label: "Product", detail: "Ambiguity becomes product." },
 ];
 
+export type CapabilityGroup = {
+  title: string;
+  items: string[];
+};
+
+/**
+ * Full capability index for the homepage — six domains, each a heading with
+ * its constituent skills/services. Rendered as a hover/focus disclosure
+ * (see ConsultancyIntro) rather than a flat pill list, so the full breadth
+ * is available without dominating the section visually.
+ */
+export const capabilityGroups: CapabilityGroup[] = [
+  {
+    title: "Product Strategy & UX",
+    items: [
+      "Product discovery",
+      "UX audits",
+      "UX research",
+      "User journeys",
+      "Information architecture",
+      "Usability testing",
+      "Product strategy",
+      "Prioritisation",
+      "Prototyping",
+      "Analytics-informed optimisation",
+    ],
+  },
+  {
+    title: "Design Systems & Accessibility",
+    items: [
+      "Design systems",
+      "Component architecture",
+      "Design tokens",
+      "Accessible interaction patterns",
+      "Accessibility audits",
+      "WCAG compliance",
+      "Responsive systems",
+      "Figma-to-code alignment",
+      "Design system governance",
+    ],
+  },
+  {
+    title: "Design Engineering",
+    items: [
+      "Interaction design",
+      "Production prototyping",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Responsive UI engineering",
+      "Motion and micro-interactions",
+      "Frontend architecture",
+      "Performance optimisation",
+      "Interface polish",
+    ],
+  },
+  {
+    title: "Digital Product Engineering",
+    items: [
+      "Web applications",
+      "Frontend development",
+      "API integration",
+      "GraphQL integration",
+      "Application architecture",
+      "State and data flows",
+      "Testing and QA",
+      "Performance",
+      "SEO",
+      "Production readiness",
+    ],
+  },
+  {
+    title: "AI Product & Rapid Prototyping",
+    items: [
+      "AI-assisted product prototyping",
+      "AI-enabled interfaces",
+      "Agent UX",
+      "Conversational interfaces",
+      "AI feature integration",
+      "Human-in-the-loop UX",
+      "Design-to-code workflows",
+      "Rapid product experiments",
+      "AI-assisted development workflows",
+    ],
+  },
+  {
+    title: "Brand & Creative Technology",
+    items: [
+      "Digital identity",
+      "Brand systems",
+      "Typography",
+      "Digital brand expression",
+      "Interactive experiences",
+      "Creative development",
+      "Audio-led experiences",
+      "Creative technology",
+      "Experimental interfaces",
+    ],
+  },
+];
+
 export type CapabilityDomain = {
   title: string;
   description: string;

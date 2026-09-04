@@ -9,7 +9,14 @@ import { TypewriterWord } from "@/components/typewriter-word";
 import { CtaLink } from "@/components/cta-link";
 import { siteConfig } from "@/lib/site-config";
 
-const focusAreas = ["Design", "Engineering", "Music", "Culture", "Systems Thinking"];
+const focusAreas = [
+  "Design",
+  "Engineering",
+  "App Development",
+  "Product Strategy",
+  "Music",
+  "Systems Thinking",
+];
 
 export function StudioPreview() {
   return (
