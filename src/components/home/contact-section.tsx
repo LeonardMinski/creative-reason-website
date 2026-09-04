@@ -1,16 +1,7 @@
 import { SectionMeta } from "@/components/section-meta";
 import { Reveal } from "@/components/reveal";
-import { Pill } from "@/components/pill";
 import { TypewriterWord } from "@/components/typewriter-word";
 import { siteConfig } from "@/lib/site-config";
-
-const engagementTypes = [
-  "UX Consultancy",
-  "Product Design",
-  "Design Engineering",
-  "Digital Experience",
-  "Collaboration",
-];
 
 export function ContactSection() {
   return (
@@ -20,7 +11,7 @@ export function ContactSection() {
       className="border-t border-line bg-ink text-paper"
     >
       <div className="mx-auto w-full max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16">
-        <SectionMeta index="12" label="Get In Touch" tone="paper" />
+        <SectionMeta index="08" label="Get In Touch" tone="paper" />
 
         <Reveal>
           <h2
@@ -29,19 +20,12 @@ export function ContactSection() {
           >
             Have a problem worth <TypewriterWord word="solving?" />
           </h2>
+          <p className="mt-6 max-w-md font-body text-base leading-relaxed text-paper/65 md:text-lg">
+            Bring Creative Reason in at the problem, the idea or the build.
+          </p>
         </Reveal>
 
         <Reveal delayMs={80}>
-          <ul className="mt-8 flex flex-wrap gap-2">
-            {engagementTypes.map((type) => (
-              <Pill as="li" tone="dark" key={type}>
-                {type}
-              </Pill>
-            ))}
-          </ul>
-        </Reveal>
-
-        <Reveal delayMs={140}>
           <div className="mt-12 flex flex-col gap-4 border-t border-paper/10 pt-8 sm:flex-row sm:items-end sm:justify-between">
             <a
               href={`mailto:${siteConfig.contactEmail}`}

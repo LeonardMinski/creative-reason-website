@@ -5,19 +5,12 @@ import { SpectrumRule } from "@/components/spectrum-rule";
 import { Pill } from "@/components/pill";
 import { TypewriterWord } from "@/components/typewriter-word";
 import { siteConfig } from "@/lib/site-config";
+import { engagementTypes } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Contact",
   description: `Get in touch with ${siteConfig.name} — ${siteConfig.location}.`,
 };
-
-const engagementTypes = [
-  "UX Consultancy",
-  "Product Design",
-  "Design Engineering",
-  "Digital Experience",
-  "Collaboration",
-];
 
 export default function ContactPage() {
   return (

@@ -4,20 +4,20 @@ import { TypewriterWord } from "@/components/typewriter-word";
 
 const items = [
   "Responsive behaviour",
-  "Interaction design",
-  "Accessibility (WCAG)",
-  "Component architecture",
-  "Design systems",
-  "Frontend engineering",
+  "Real interaction states",
+  "Accessibility",
   "Performance",
-  "Production quality",
+  "Interaction fidelity",
+  "Production constraints",
+  "Component systems",
+  "Implementation quality",
 ];
 
 export function DesignEngineering() {
   return (
     <section aria-labelledby="design-engineering-heading" className="border-t border-line bg-ink text-paper">
       <div className="mx-auto w-full max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16">
-        <SectionMeta index="09" label="Design Systems & Quality" tone="paper" />
+        <SectionMeta index="06" label="Design Engineering" tone="paper" />
 
         <div className="mt-10 grid gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal>
@@ -28,9 +28,10 @@ export function DesignEngineering() {
               Design doesn&rsquo;t end when Figma <TypewriterWord word="does." />
             </h2>
             <p className="mt-6 max-w-md font-body text-base leading-relaxed text-paper/65">
-              We think in components, states, responsive behaviour,
-              accessibility and performance — because design decisions that
-              ignore implementation create debt.
+              A static design and a shipped product are not the same thing.
+              The gap between them is where responsive behaviour, real
+              interaction states and production constraints either get
+              handled properly — or get skipped.
             </p>
           </Reveal>
 
