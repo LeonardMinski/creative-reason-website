@@ -274,7 +274,7 @@ export const projects: Project[] = [
     tagline: "A custom WordPress theme and digital experience for a live venue — events, booking and menu.",
     tags: ["UX", "Brand"],
     screenshots: [
-      { src: "/work/station-ten/home.png", alt: "Station Ten — homepage hero and upcoming events listing", width: 1800, height: 1163 },
+      { src: "/work/station-ten/home.png", alt: "Station Ten — homepage hero and upcoming events listing", width: 2040, height: 1291 },
     ],
   },
 ];
