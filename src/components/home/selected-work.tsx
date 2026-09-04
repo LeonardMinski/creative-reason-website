@@ -10,7 +10,7 @@ import { projects } from "@/lib/projects";
 export function SelectedWork() {
   return (
     <Section tone="paper" aria-labelledby="selected-work-heading">
-      <SectionMeta index="06" label="Selected Work Catalogue" />
+      <SectionMeta index="03" label="Selected Work Catalogue" />
       <SpectrumRule className="mt-6 mb-10" />
 
       <div className="flex items-baseline justify-between gap-4">

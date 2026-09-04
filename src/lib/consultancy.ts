@@ -61,10 +61,10 @@ export type CapabilityGroup = {
 };
 
 /**
- * Full capability index for the homepage — six domains, each a heading with
- * its constituent skills/services. Rendered as a hover/focus disclosure
- * (see ConsultancyIntro) rather than a flat pill list, so the full breadth
- * is available without dominating the section visually.
+ * The homepage's one, definitive capability taxonomy — six domains, each a
+ * heading with its constituent skills/services. Rendered as a hover/focus
+ * disclosure (see the Capabilities section) rather than a flat pill list,
+ * so the full breadth is available without dominating the section visually.
  */
 export const capabilityGroups: CapabilityGroup[] = [
   {
@@ -153,33 +153,5 @@ export const capabilityGroups: CapabilityGroup[] = [
       "Creative technology",
       "Experimental interfaces",
     ],
-  },
-];
-
-export type CapabilityDomain = {
-  title: string;
-  description: string;
-};
-
-export const coreCapabilities: CapabilityDomain[] = [
-  {
-    title: "Strategy + UX",
-    description:
-      "From problem definition to design direction — product strategy, UX research and product discovery that make complex user journeys legible.",
-  },
-  {
-    title: "Digital Products",
-    description:
-      "Interaction design and digital product design for web and native experiences, built to ship.",
-  },
-  {
-    title: "Design Engineering",
-    description:
-      "The bridge between design intent and production code — frontend engineering that holds Figma-level fidelity and meets accessibility standards.",
-  },
-  {
-    title: "Brand + Creative Technology",
-    description:
-      "Identity systems and creative technology work — unifying brand expression with interactive, experimental builds.",
   },
 ];

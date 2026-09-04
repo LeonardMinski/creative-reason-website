@@ -7,7 +7,7 @@ const steps = ["Observe", "Reason", "Create", "Ship"];
 export function Methodology() {
   return (
     <Section tone="paper" aria-labelledby="methodology-heading">
-      <SectionMeta index="08" label="Proprietary Methodology" />
+      <SectionMeta index="05" label="Proprietary Methodology" />
       <h2 id="methodology-heading" className="sr-only">
         Our methodology: Observe, Reason, Create, Ship
       </h2>

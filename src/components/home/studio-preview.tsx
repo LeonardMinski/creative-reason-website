@@ -21,7 +21,7 @@ const focusAreas = [
 export function StudioPreview() {
   return (
     <Section tone="paper" aria-labelledby="studio-heading">
-      <SectionMeta index="11" label="About the Founder" />
+      <SectionMeta index="07" label="About the Founder" />
       <SpectrumRule className="mt-6 mb-10" />
 
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:items-start">
