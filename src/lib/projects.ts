@@ -285,8 +285,10 @@ export function getProject(slug: string): Project | undefined {
 
 /**
  * Own products that are genuinely in early development — no build to show
- * yet, so these are name + one-liner only, clearly marked, on `/products`.
- * Not part of `projects`: no case study route, no Selected Work listing.
+ * yet, so these are name + one-liner only, clearly marked "Under
+ * construction" wherever they appear (`/products` and the homepage's
+ * Selected Work section). Not part of `projects`: no case study route,
+ * no catalogue entry — a shipped build is what earns those.
  */
 export type InDevelopmentProduct = {
   slug: string;

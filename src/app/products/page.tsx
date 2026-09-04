@@ -7,7 +7,8 @@ import { SpectrumRule } from "@/components/spectrum-rule";
 import { Reveal } from "@/components/reveal";
 import { PlaceholderMedia } from "@/components/placeholder-media";
 import { TypewriterWord } from "@/components/typewriter-word";
-import { inDevelopmentProducts, projects } from "@/lib/projects";
+import { InDevelopmentProducts } from "@/components/in-development-products";
+import { projects } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -65,16 +66,8 @@ export default function ProductsPage() {
         <p className="font-mono text-xs uppercase tracking-widest text-ink/50">
           In development
         </p>
-        <div className="mt-8 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {inDevelopmentProducts.map((product, i) => (
-            <Reveal key={product.slug} delayMs={i * 60}>
-              <span className="inline-block rounded-full bg-signal/10 px-3 py-1 font-mono text-[11px] uppercase tracking-widest text-signal transition-all duration-200 ease-out hover:scale-105 hover:bg-signal/20">
-                Under construction
-              </span>
-              <h2 className="mt-3 font-display text-xl font-semibold">{product.title}</h2>
-              <p className="mt-2 max-w-sm font-body text-sm text-ink/60">{product.tagline}</p>
-            </Reveal>
-          ))}
+        <div className="mt-8">
+          <InDevelopmentProducts />
         </div>
       </div>
     </Section>
