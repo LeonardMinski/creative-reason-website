@@ -7,7 +7,7 @@ export const siteConfig = {
   tagline: "Ideas, designed into reality.",
   description:
     "Creative Reason is an independent UX, design and technology studio based in London, working across UX consultancy, digital product design and design engineering.",
-  url: "https://creativereason.com",
+  url: "https://creativereason.co.uk",
   location: "London, UK",
   contactEmail: "creativereasonhq@gmail.com",
   founder: "Leonard Minski",

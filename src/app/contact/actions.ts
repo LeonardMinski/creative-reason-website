@@ -42,7 +42,7 @@ export async function submitEnquiry(
     const resend = new Resend(process.env.RESEND_API_KEY);
     const { error } = await resend.emails.send({
       // Resend's shared sandbox sender — swap for a verified domain address
-      // (e.g. enquiries@creativereason.com) once one is set up in Resend.
+      // (e.g. enquiries@creativereason.co.uk) once one is set up in Resend.
       from: "Creative Reason enquiries <onboarding@resend.dev>",
       to: "iksnim@hotmail.co.uk",
       replyTo: email,
