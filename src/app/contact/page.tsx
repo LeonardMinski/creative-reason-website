@@ -6,6 +6,7 @@ import { Pill } from "@/components/pill";
 import { TypewriterWord } from "@/components/typewriter-word";
 import { siteConfig } from "@/lib/site-config";
 import { engagementTypes } from "@/lib/contact";
+import { EnquiryForm } from "@/components/enquiry-form";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -32,13 +33,20 @@ export default function ContactPage() {
         ))}
       </ul>
 
+      <div className="mt-14 border-t border-line-light/60 pt-10">
+        <EnquiryForm />
+      </div>
+
       <div className="mt-14 flex flex-col gap-4 border-t border-line-light/60 pt-8 sm:flex-row sm:items-end sm:justify-between">
-        <a
-          href={`mailto:${siteConfig.contactEmail}`}
-          className="font-display text-2xl font-medium underline decoration-signal underline-offset-8 transition-opacity hover:opacity-70 md:text-3xl"
-        >
-          {siteConfig.contactEmail}
-        </a>
+        <div>
+          <p className="font-mono text-xs uppercase tracking-widest text-ink/50">Prefer email directly?</p>
+          <a
+            href={`mailto:${siteConfig.contactEmail}`}
+            className="font-display text-2xl font-medium underline decoration-signal underline-offset-8 transition-opacity hover:opacity-70 md:text-3xl"
+          >
+            {siteConfig.contactEmail}
+          </a>
+        </div>
         <p className="font-mono text-xs uppercase tracking-widest text-ink/50">
           {siteConfig.location}
         </p>
