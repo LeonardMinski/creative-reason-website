@@ -12,9 +12,9 @@ type RevealProps = {
 };
 
 /**
- * Scroll-triggered fade/rise, once per element. Initial state is always
- * `false` on both server and client — `typeof IntersectionObserver` is
- * itself undefined during SSR, so branching on it in the initial state
+ * Scroll-triggered fade/rise/scale, once per element. Initial state is
+ * always `false` on both server and client — `typeof IntersectionObserver`
+ * is itself undefined during SSR, so branching on it in the initial state
  * (rather than inside the effect) produced a real hydration mismatch here
  * previously. The `.reveal` class exists purely so the `<noscript>` override
  * in the root layout can force content visible when JS never runs.
@@ -61,8 +61,11 @@ export function Reveal({ children, className, delayMs = 0, as: Tag = "div" }: Re
       ref={ref}
       style={{ transitionDelay: `${delayMs}ms` }}
       className={cn(
-        "reveal transition-[opacity,transform] duration-500 ease-out",
-        visible ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
+        // Tailwind v4 compiles translate-y-*/scale-* to the native `translate`/
+        // `scale` CSS properties, not the `transform` shorthand — both need
+        // listing explicitly here or they snap instantly instead of animating.
+        "reveal transition-[opacity,translate,scale] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",
+        visible ? "translate-y-0 scale-100 opacity-100" : "translate-y-6 scale-[0.97] opacity-0",
         className
       )}
     >
