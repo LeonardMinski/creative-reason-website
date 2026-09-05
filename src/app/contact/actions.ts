@@ -1,7 +1,6 @@
 "use server";
 
 import { Resend } from "resend";
-import { siteConfig } from "@/lib/site-config";
 import { engagementTypes } from "@/lib/contact";
 
 export type EnquiryFormState = {
@@ -45,7 +44,7 @@ export async function submitEnquiry(
       // Resend's shared sandbox sender — swap for a verified domain address
       // (e.g. enquiries@creativereason.com) once one is set up in Resend.
       from: "Creative Reason enquiries <onboarding@resend.dev>",
-      to: siteConfig.contactEmail,
+      to: "iksnim@hotmail.co.uk",
       replyTo: email,
       subject: `New enquiry — ${enquiryType}`,
       text: `From: ${name} <${email}>\nType: ${enquiryType}\n\n${message}`,

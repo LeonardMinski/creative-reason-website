@@ -10,7 +10,7 @@ export function Hero() {
           className="animate-hero-enter font-mono text-xs uppercase tracking-[0.14em] text-ink/50"
           style={{ animationDelay: "0ms" }}
         >
-          Independent UX, Design + Technology Studio — London
+          We help businesses improve websites, apps and digital products through research, design and technology.
         </p>
 
         <CreativeReasonMark
