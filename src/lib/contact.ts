@@ -2,7 +2,7 @@
 export const engagementTypes = [
   "UX Consultancy",
   "Product Design",
-  "Design Engineering",
+  "Frontend Engineering",
   "Digital Experience",
   "Collaboration",
 ];

@@ -13,8 +13,8 @@ export default function Home() {
     <>
       <Hero />
       <CrateFeature />
-      <ConsultancyIntro />
       <SelectedWork />
+      <ConsultancyIntro />
       <Capabilities />
       <Methodology />
       <DesignEngineering />

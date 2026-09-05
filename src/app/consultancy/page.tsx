@@ -5,7 +5,7 @@ import { SectionMeta } from "@/components/section-meta";
 import { SpectrumRule } from "@/components/spectrum-rule";
 import { Reveal } from "@/components/reveal";
 import { TypewriterWord } from "@/components/typewriter-word";
-import { consultancyCapabilities, consultancyMethod } from "@/lib/consultancy";
+import { consultancyMethod } from "@/lib/consultancy";
 import { projects } from "@/lib/projects";
 
 export const metadata: Metadata = {
@@ -49,37 +49,22 @@ export default function ConsultancyPage() {
         </ol>
       </Section>
 
-      <Section tone="paper">
-        <SectionMeta index="01" label="Capabilities" />
-        <SpectrumRule className="mt-6 mb-10" />
-        <ul className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {consultancyCapabilities.map((capability, i) => (
-            <Reveal as="li" key={capability.title} delayMs={i * 40}>
-              <h2 className="font-display text-base font-semibold uppercase tracking-tight">
-                {capability.title}
-              </h2>
-              <p className="mt-2 font-body text-sm leading-relaxed text-ink/60">
-                {capability.description}
-              </p>
-            </Reveal>
-          ))}
-        </ul>
-      </Section>
-
       {engagements.length > 0 ? (
         <Section tone="ink">
-          <SectionMeta index="02" label="Selected Engagements" tone="paper" />
+          <SectionMeta index="01" label="Selected Engagements" tone="paper" />
           <SpectrumRule className="mt-6 mb-10" />
           <ul className="flex flex-col divide-y divide-paper/10 border-t border-paper/10">
             {engagements.map((engagement) => (
-              <li key={engagement.slug}>
-                <Link
-                  href={`/work/${engagement.slug}`}
-                  className="flex items-baseline gap-4 py-5 text-paper transition-opacity hover:opacity-70"
-                >
-                  <span className="font-mono text-xs text-signal">{engagement.code}</span>
-                  <span className="font-display text-2xl font-medium md:text-3xl">
-                    {engagement.title}
+              <li key={engagement.slug} className="py-5">
+                <Link href={`/work/${engagement.slug}`} className="group block">
+                  <span className="flex items-baseline gap-4">
+                    <span className="font-mono text-xs text-signal">{engagement.code}</span>
+                    <span className="font-display text-2xl font-medium text-paper transition-opacity group-hover:opacity-70 md:text-3xl">
+                      {engagement.title}
+                    </span>
+                  </span>
+                  <span className="mt-1.5 block max-w-lg font-body text-sm leading-snug text-paper/60">
+                    {engagement.tagline}
                   </span>
                 </Link>
               </li>

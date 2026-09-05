@@ -12,7 +12,7 @@ const representativeCapabilities = ["UX Audits", "Product Discovery", "Product S
 export function ConsultancyIntro() {
   return (
     <Section tone="paper" aria-labelledby="consultancy-heading">
-      <SectionMeta index="02" label="Consultancy" />
+      <SectionMeta index="03" label="Consultancy" />
       <SpectrumRule className="mt-6 mb-10" />
 
       <Reveal>
