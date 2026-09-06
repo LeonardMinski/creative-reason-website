@@ -4,7 +4,7 @@ const staticRoutes = [
   ["/", "Creative"],
   ["/work", "Work."],
   ["/products", "Products."],
-  ["/consultancy", "Before we design, we find out why."],
+  ["/consultancy", "Before designing, find out why."],
   ["/studio", "Designer. Engineer."],
   ["/contact", "Have a problem worth solving?"],
 ];

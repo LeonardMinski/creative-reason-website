@@ -43,7 +43,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <SectionMeta index="00" label="Case Study" />
         <SpectrumRule className="mt-6 mb-10 max-w-24" />
         <p className="font-mono text-xs uppercase tracking-[0.14em] text-signal">
-          {project.code}
+          {project.code} — {project.workType}
         </p>
         <h1
           id="project-heading"

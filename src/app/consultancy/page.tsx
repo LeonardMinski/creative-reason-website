@@ -26,12 +26,12 @@ export default function ConsultancyPage() {
           id="consultancy-heading"
           className="max-w-3xl font-display text-4xl font-black uppercase leading-[1.02] tracking-tight md:text-6xl"
         >
-          Before we design, we find out <TypewriterWord word="why." />
+          Before designing, find out <TypewriterWord word="why." />
         </h1>
         <p className="mt-6 max-w-xl font-body text-base leading-relaxed text-ink/65 md:text-lg">
-          Most design problems are symptoms of upstream decisions. We start
-          by understanding the real problem — then design toward a solution
-          that addresses it.
+          Most design problems are symptoms of upstream decisions. Creative
+          Reason starts by understanding the real problem — then designs
+          toward a solution that addresses it.
         </p>
 
         <ol className="mt-14 grid gap-x-10 gap-y-6 border-t border-line-light/60 pt-10 md:grid-cols-3">

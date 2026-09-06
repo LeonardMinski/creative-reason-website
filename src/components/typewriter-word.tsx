@@ -14,13 +14,15 @@ type TypewriterWordProps = {
 };
 
 /**
- * Types out `word` character-by-character once it scrolls into view, holds
- * it, then clears and types it again — looping indefinitely. The full word
- * is always present for assistive tech via aria-label on the wrapper, with
- * the animated characters hidden from it, so meaning is never carried only
- * by the animation and the repeat-forever loop is invisible to screen
- * readers. Under prefers-reduced-motion the word simply appears once, whole,
- * with no typing and no looping.
+ * Renders `word` complete and whole by default (this is also what SSR, a
+ * no-JS visitor, and crawlers see — never a partial or empty string), then
+ * once it scrolls into view, jump-cuts to empty and types it back out
+ * character-by-character, holds, and loops indefinitely as a decorative
+ * flourish. The full word is always present for assistive tech via
+ * aria-label on the wrapper, with the animated characters hidden from it,
+ * so meaning is never carried only by the animation and the repeat-forever
+ * loop is invisible to screen readers. Under prefers-reduced-motion the word
+ * simply stays whole, with no typing and no looping.
  */
 export function TypewriterWord({
   word,
@@ -29,7 +31,9 @@ export function TypewriterWord({
   pauseMs = 2000,
 }: TypewriterWordProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [visibleChars, setVisibleChars] = useState(0);
+  // Starts fully typed (the word's own length, not 0) so the word is always
+  // complete before the animation loop below ever gets a chance to run.
+  const [visibleChars, setVisibleChars] = useState(word.length);
   const [started, setStarted] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
 
@@ -82,7 +86,7 @@ export function TypewriterWord({
     <span ref={ref} aria-label={word} className={cn("inline-block", className)}>
       <span aria-hidden="true">
         {shown}
-        {!reduceMotion && (
+        {started && !reduceMotion && (
           <span className="typewriter-cursor" aria-hidden="true">
             |
           </span>

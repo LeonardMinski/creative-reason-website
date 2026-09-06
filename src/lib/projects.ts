@@ -46,6 +46,15 @@ export type Project = {
   code: string;
   /** Derived from the code prefix per the approved catalogue codes (SECTION I). */
   kind: "product" | "consultancy";
+  /**
+   * How this piece of work relates to Creative Reason, shown alongside its
+   * disciplines in the catalogue and case-study header. "Creative Reason
+   * Product" is reserved for shipped, CR-branded products (currently just
+   * CRATE) — self-directed builds and client engagements are "Selected Work"
+   * even when `kind` is "product" (e.g. ShiftFlow: a serious personal build,
+   * not a released CR product).
+   */
+  workType: "Creative Reason Product" | "Selected Work";
   title: string;
   category: string;
   tagline: string;
@@ -69,6 +78,7 @@ export const projects: Project[] = [
     slug: "crate",
     code: "CR / 001",
     kind: "product",
+    workType: "Creative Reason Product",
     title: "Crate",
     category: "Product · UX Design · Engineering",
     tagline:
@@ -254,6 +264,7 @@ export const projects: Project[] = [
     slug: "shiftflow",
     code: "CR / 002",
     kind: "product",
+    workType: "Selected Work",
     title: "ShiftFlow",
     category: "Product · UX Design · Engineering",
     tagline: "Employee scheduling without spreadsheet chaos.",
@@ -497,6 +508,7 @@ export const projects: Project[] = [
     slug: "station-ten",
     code: "CR / C01",
     kind: "consultancy",
+    workType: "Selected Work",
     title: "Station Ten",
     category: "Consultancy · UX Design · WordPress Development",
     tagline: "Giving a hidden local venue the digital presence it deserves.",

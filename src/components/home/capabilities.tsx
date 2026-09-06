@@ -1,9 +1,58 @@
+"use client";
+
+import { useId, useState } from "react";
 import { Section } from "@/components/section";
 import { SectionMeta } from "@/components/section-meta";
 import { SpectrumRule } from "@/components/spectrum-rule";
 import { Reveal } from "@/components/reveal";
 import { TypewriterWord } from "@/components/typewriter-word";
-import { capabilityGroups } from "@/lib/consultancy";
+import { capabilityGroups, type CapabilityGroup } from "@/lib/consultancy";
+
+/** How many of each group's strongest items (see consultancy.ts ordering) show by default — the rest are one click away, not hidden behind hover. */
+const VISIBLE_COUNT = 4;
+
+function CapabilityCard({ group, index }: { group: CapabilityGroup; index: number }) {
+  const [expanded, setExpanded] = useState(false);
+  const listId = useId();
+  const visible = group.items.slice(0, VISIBLE_COUNT);
+  const rest = group.items.slice(VISIBLE_COUNT);
+
+  return (
+    <div>
+      <p className="font-mono text-xs text-signal">{String(index + 1).padStart(2, "0")}</p>
+      <p className="mt-2 font-display text-lg font-semibold">{group.title}</p>
+
+      <ul className="mt-3 flex flex-col gap-1.5">
+        {visible.map((item) => (
+          <li key={item} className="font-body text-xs leading-snug text-ink/65">
+            {item}
+          </li>
+        ))}
+      </ul>
+
+      {rest.length > 0 ? (
+        <>
+          <ul id={listId} hidden={!expanded} className="mt-1.5 flex flex-col gap-1.5">
+            {rest.map((item) => (
+              <li key={item} className="font-body text-xs leading-snug text-ink/65">
+                {item}
+              </li>
+            ))}
+          </ul>
+          <button
+            type="button"
+            aria-expanded={expanded}
+            aria-controls={listId}
+            onClick={() => setExpanded((value) => !value)}
+            className="mt-2 font-mono text-[11px] uppercase tracking-widest text-ink/40 underline underline-offset-4 transition-colors hover:text-signal focus-visible:text-signal"
+          >
+            {expanded ? "Show less" : `+${rest.length} more`}
+          </button>
+        </>
+      ) : null}
+    </div>
+  );
+}
 
 /** The homepage's one, definitive capability taxonomy — see /studio and consultancy-intro.tsx's teaser for what deliberately stays out. */
 export function Capabilities() {
@@ -25,36 +74,16 @@ export function Capabilities() {
             <TypewriterWord word="Build." />
           </h2>
           <p className="mt-6 max-w-xs font-body text-sm text-ink/60">
-            Our capabilities are structured to eliminate the traditional
-            handoff friction between thinking, writing, and engineering.
+            Creative Reason moves across disciplines rather than handing off
+            between them — the same person carries a problem from thinking
+            through to shipped code.
           </p>
         </Reveal>
 
         <ol className="grid gap-x-8 gap-y-10 border-t border-line-light/60 pt-8 sm:grid-cols-2 lg:grid-cols-3">
           {capabilityGroups.map((group, i) => (
-            <Reveal as="li" key={group.title} delayMs={i * 60} className="group">
-              <p className="font-mono text-xs text-signal">{String(i + 1).padStart(2, "0")}</p>
-              <button
-                type="button"
-                className="mt-2 block text-left font-display text-lg font-semibold transition-colors duration-200 ease-out hover:text-signal focus-visible:text-signal"
-              >
-                {group.title}
-              </button>
-
-              {/* Expands in-flow (not an overlay) so it can never cover the
-                  card in the row below. Always present for assistive tech —
-                  visually collapsed until hover/focus, not conditionally
-                  rendered, so the full breadth is available without relying
-                  on hover. */}
-              <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover:grid-rows-[1fr] group-focus-within:grid-rows-[1fr]">
-                <ul className="flex flex-col gap-1.5 overflow-hidden pt-3">
-                  {group.items.map((item) => (
-                    <li key={item} className="font-body text-xs leading-snug text-ink/65">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <Reveal as="li" key={group.title} delayMs={i * 60}>
+              <CapabilityCard group={group} index={i} />
             </Reveal>
           ))}
         </ol>

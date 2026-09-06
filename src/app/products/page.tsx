@@ -16,7 +16,11 @@ export const metadata: Metadata = {
 };
 
 export default function ProductsPage() {
-  const products = projects.filter((project) => project.kind === "product");
+  // workType, not kind — this page is specifically Creative Reason's own
+  // shipped products, not every self-directed build (e.g. ShiftFlow is
+  // `kind: "product"` but a personal learning project, not a CR-branded
+  // release, so it belongs in Work rather than here).
+  const products = projects.filter((project) => project.workType === "Creative Reason Product");
 
   return (
     <Section tone="paper" className="min-h-[60vh]" aria-labelledby="products-heading">

@@ -20,7 +20,7 @@ export function ConsultancyIntro() {
           id="consultancy-heading"
           className="max-w-3xl font-display text-4xl font-black uppercase leading-[1.02] tracking-tight md:text-6xl"
         >
-          Before we design, we find out <TypewriterWord word="why." />
+          Before designing, find out <TypewriterWord word="why." />
         </h2>
         <p className="mt-6 max-w-xl font-body text-base leading-relaxed text-ink/65 md:text-lg">
           Products rarely fail because they need prettier screens. Creative

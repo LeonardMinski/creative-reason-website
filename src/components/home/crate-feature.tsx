@@ -13,7 +13,7 @@ export function CrateFeature() {
   return (
     <section aria-labelledby="crate-heading" className="border-t border-line bg-ink text-paper">
       <div className="mx-auto w-full max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16">
-        <SectionMeta index="01" label="Flagship Product" tone="paper" />
+        <SectionMeta index="01" label="Creative Reason Product" tone="paper" />
 
         <div className="mt-10 grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <Reveal>

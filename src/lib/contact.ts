@@ -5,4 +5,5 @@ export const engagementTypes = [
   "Frontend Engineering",
   "Digital Experience",
   "Collaboration",
+  "Opportunities",
 ];
