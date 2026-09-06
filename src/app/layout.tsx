@@ -32,32 +32,34 @@ const youngSerif = Young_Serif({
   display: "swap",
 });
 
+const defaultTitle = `${siteConfig.name} — Independent Product Studio by ${siteConfig.founder}`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Independent UX, Design + Technology Studio, London`,
+    default: defaultTitle,
     template: `%s — ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
-    "UX consultancy",
-    "product design studio",
+    "product studio",
+    "product design",
     "design engineering",
-    "London design studio",
-    "UX research",
-    "design systems",
+    "software engineering",
+    "London product studio",
+    "UX consultancy",
   ],
   openGraph: {
     type: "website",
     locale: "en_GB",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — Independent UX, Design + Technology Studio`,
+    title: defaultTitle,
     description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — Independent UX, Design + Technology Studio`,
+    title: defaultTitle,
     description: siteConfig.description,
   },
 };
@@ -67,8 +69,13 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: siteConfig.name,
   url: siteConfig.url,
+  logo: `${siteConfig.url}/brand/mark.png`,
   description: siteConfig.description,
   email: siteConfig.contactEmail,
+  founder: {
+    "@type": "Person",
+    name: siteConfig.founder,
+  },
   address: {
     "@type": "PostalAddress",
     addressLocality: "London",

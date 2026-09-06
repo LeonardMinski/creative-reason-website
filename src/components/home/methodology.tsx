@@ -9,7 +9,7 @@ export function Methodology() {
     <Section tone="paper" aria-labelledby="methodology-heading">
       <SectionMeta index="05" label="Proprietary Methodology" />
       <h2 id="methodology-heading" className="sr-only">
-        Our methodology: Observe, Reason, Create, Ship
+        Methodology: Observe, Reason, Create, Ship
       </h2>
 
       <Reveal>

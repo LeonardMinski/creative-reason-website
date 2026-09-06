@@ -48,9 +48,11 @@ export function StudioPreview() {
             Problem <TypewriterWord word="solver." />
           </h2>
           <p className="mt-6 max-w-xl font-body text-base leading-relaxed text-ink/70 md:text-lg">
-            {siteConfig.name} is the independent practice of {siteConfig.founder} —
-            combining UX, design, engineering, music and systems thinking to
-            understand problems, shape better ideas and build useful things.
+            {siteConfig.name} is the independent product studio of {siteConfig.founder}.
+            I&rsquo;m a product-focused designer and software engineer working
+            across product thinking, UX and engineering — combined with music
+            and systems thinking to investigate problems properly, design
+            deliberately, and build products through to working software.
             Based in {siteConfig.location}.
           </p>
           <ul className="mt-6 flex flex-wrap gap-2">

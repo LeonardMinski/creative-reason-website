@@ -10,7 +10,7 @@ export function Hero() {
           className="animate-hero-enter font-mono text-xs uppercase tracking-[0.14em] text-ink/50"
           style={{ animationDelay: "0ms" }}
         >
-          We help businesses improve websites, apps and digital products through research, design and technology.
+          Independent product studio by Leonard Minski — combining product thinking, design and engineering to turn ideas into working software.
         </p>
 
         <CreativeReasonMark

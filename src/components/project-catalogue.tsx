@@ -45,6 +45,9 @@ export function ProjectCatalogue({ projects }: ProjectCatalogueProps) {
                 <span className="mt-1.5 block max-w-md font-body text-sm leading-snug text-ink/60 line-clamp-2">
                   {project.tagline}
                 </span>
+                <span className="mt-1.5 block font-mono text-[11px] uppercase tracking-widest text-ink/40">
+                  {project.workType} — {project.tags.join(" · ")}
+                </span>
               </Link>
             </li>
           );
